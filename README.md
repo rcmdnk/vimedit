@@ -1,27 +1,38 @@
 vimedit
 =======
 
-`vimedit` is a set of settings for yamy
-to use windows with vim like key bindings.
+`vimedit` is a setting file of yamy
+to use Windows with vim like key bindings.
 
 ## Yet Another Mado tsukai no Yuutsu (yamy)
-[yamy](http://sourceforge.jp/projects/yamy/) is keybind customize software
+[yamy](http://sourceforge.jp/projects/yamy/) is key-bind customize software
 for  windows.
 For basic settings, you can refer
 [the manual of Mado Tukai no Yuutsu](http://mayu.sourceforge.net/mayu/doc/README-ja.html), which is a base of yamy
 
 There are some posts in my blog about [yamy](http://rcmdnk.github.com/blog/categories/yamy/) (Japanese only), too.
 
-### [vimedit.mayu](./vimedit.mayu)
+## [vimedit.mayu](./vimedit.mayu)
 In this file, the settings for vim-like move/edit are extracted from .mayu file.
 It can work standalone.
 [This page](http://rcmdnk.github.com/blog/2013/03/16/yamy4/) also explains this setting.
 
+### Install
+Put `vimedit.mayu` in yamy's directory. (normally it is C:\Program Files\yamy).
+And include it in your `.mayu` like
+
+    include "vimedit.mayu"
+
+Or just copy and paste lines in `vimedit.mayu` in your `.mayu`
+
+If you don't need any other settings for yamy,
+choose `vimedit.mayu` directly from the setting of yamy.
+
 Following features are available.
 
-#### Vim-like cursor move with Alt+Control (or CapsLock)
+### Vim-like cursor move with Alt+Control (or CapsLock)
 You can move a cursor with `Alt-Ctrl-`+`h`,`j`,`k`,`l` to left, down, up, and right
-like vim in anytime. (It just sends eacy cursor key command.)
+like vim in anytime. (It just sends a cursor key command.)
 
 In addition, if `CapslLock` is set, `h`,`j`,`k`,`l` can be used standalone to move around.
 
@@ -31,7 +42,7 @@ In addition, if `CapslLock` is set, `h`,`j`,`k`,`l` can be used standalone to mo
       * A-C-k: Cursor Up
       * A-C-l: Cursor Right
 
-#### Vim-like mouse move with Alt+Control (or CapsLock)
+### Vim-like mouse move with Alt+Control (or CapsLock)
 A mouse cursor also can be moved by a keyboard.
 
 `A-C-y` moves a mouse cursor to the left, and `A-C-`+`u`,`i`,`o`
@@ -57,8 +68,8 @@ In addition, click/mouse wheel also can be used from the keyboard as followings.
       * A-S-C-m (or CapsLock-S-m): Mouse Wheel More Down
       * A-S-C-, (or CapsLock-S-,):  Mouse Wheel More Up
 
-#### Vim-like Window move Alt+Shift
-You can also move windows w/o mosue!
+### Vim-like Window move Alt+Shift
+You can also move windows w/o mouse!
 
     * Window Move
       * A-S-y: Window Move Left
@@ -66,22 +77,21 @@ You can also move windows w/o mosue!
       * A-S-i: Window Move Up
       * A-S-o: Window Move Right
 
-#### Vim emulation
-With [vimedit.mayu](./vimedit.mayu), vim mode is available on Thunderbird, Notepad, and TeraPad.
+### Vim emulation With [vimedit.mayu](./vimedit.mayu), vim mode is available on Thunderbird, Notepad, and TeraPad.
 You can add any other applications in the setting file if you want ([Ref](http://rcmdnk.github.com/blog/2013/03/16/yamy4/)).
 
-##### Mode
+#### Mode
 Following modes are available
 
 |Mode|Description|
 |:---|:----------|
 |Insert Mode|Normal Windows state|
-|Normal Mode|As in vim, cursor is moved by hjkl, w, etc... and some vim like commands are available.|
-|Visual Mode|There are three visual mode: Character-wise, Line-wise, and Block-wise. Block-wise visual mode is available only the applications which support it (In the default applications, only TeraPad support Block-sise mode.)|
+|Normal Mode|As in vim, a cursor is moved by hjkl, w, etc... and some vim like commands are available.|
+|Visual Mode|There are three visual mode: Character-wise, Line-wise, and Block-wise. Block-wise visual mode is available only the applications which support it (In the default applications, only TeraPad support Block-wise mode.)|
 |Command Line Mode|Can be used for saving file/exiting.|
 |Search Window| This is not a mode, but to search the word, searching window will be used especially for the first time. Some specific commands are available in the searching window.|
 
-Initial state is `Insert Mode`, then `Esc` or `C-[` bring you to the normal mode.
+An initial state is `Insert Mode`, then `Esc` or `C-[` bring you to the normal mode.
 
 In the normal mode, `i` is the key to be back to the insert mode.
 
@@ -101,10 +111,11 @@ After push `:`, a few commands to save/quit are available.
 |h/j/k/l|Left/Down/Up/Right|
 |0/$| To the first/last character of the line|
 |C-a/C-e| To the first/last character of the line (emacs like)|
-|w/W/e/E| Move a word forard. All work same. (like `w` in vim)|
-|b/B| Move a word backword. All work same. (like `ge` in vim)|
+|w/W/e/E| Move a word forward. All work same. (like `w` in vim)|
+|b/B| Move a word backward. All work same. (like `ge` in vim)|
 |C-u/C-d| Move Up/Down 10 line|
 |C-b/C-f| Move Up/Down 20 line|
+|Enter| Move to the first non-blank character in the next line|
 |gg/G| Go to the top/end of the file|
 |yy, Y| Copy line|
 |y0, y$| Copy from here to the head/end of the line|
@@ -118,6 +129,7 @@ After push `:`, a few commands to save/quit are available.
 |db, dB| Cut previous one word|
 |dG, dgg| Cut from here to the top/end of the file|
 |dj, dk| Cut blow/above line|
+|cc| Change line|
 |c0, c$, C| Cut from here to the head/end of the line (c$=C) and enter in the insert mode|
 |cw, cW, ce, cE| Cut following one word and enter in the insert mode|
 |cb, cB| Cut previous one word and enter in the insert mode|
@@ -131,6 +143,8 @@ After push `:`, a few commands to save/quit are available.
 |n/N| Search next/previous (Some applications support only next search)|
 |.| It is fixed to do: `Delete forward word, paste` (useful to use with a search)|
 |~| Make a character under the cursor Up case (only to Up, not a toggle)|
+|r/R| Replace one character/multi characters|
+|ZZ/ZQ| Save & Quit/Quit|
 
 In addition, `Repeat` is also available for some commands.
 1-99 can be used as a repeat number.
@@ -170,7 +184,7 @@ Commands in the insert mode
 |:----------:|:-------|
 |Enter| Close the window and back to the main window (the searched word is highlighted, and you can continue to search with `n`/`N`)|
 
-Commands in the nomal mode
+Commands in the normal mode
 
 |Key/Commands|Function|
 |:----------:|:-------|
