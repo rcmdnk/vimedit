@@ -490,7 +490,7 @@ keymap Vim : Global
   key L0-C-b = &Variable(0,20) &Repeat((Up),20) &Variable(0,0)
   key L0-C-f = &Variable(0,20) &Repeat((Down),20) &Variable(0,0)
 
-  key L0-Enter = Down Home C-Right
+  key L0-Enter = Down Home C-Right C-Left
 
 keymap2 VimUpDown: Global = &Ignore
   key L0-g = C-Home # gg
