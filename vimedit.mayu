@@ -1,3 +1,11 @@
+# yamy setting file for vim like key binding
+#         https://github.com/rcmdnk/vimedit
+#
+# Author: rcmdnk (rcmdnk@gmail.com)
+#         http://rcmdnk.github.io/
+
+rcmd
+
 # Keyboard settings
 include "dot.mayu"
 
