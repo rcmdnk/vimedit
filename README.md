@@ -17,7 +17,7 @@ In this file, the settings for vim-like move/edit are extracted from .mayu file.
 It can work standalone.
 [This page](http://rcmdnk.github.com/blog/2013/03/16/yamy4/) also explains this setting.
 
-### Install
+### Installation
 Put `vimedit.mayu` in yamy's directory. (normally it is C:\Program Files\yamy).
 And include it in your `.mayu` like
 
