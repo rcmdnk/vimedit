@@ -196,3 +196,7 @@ Commands in the normal mode
 #### Demonstration of Vim emulation with yamy, on TeraPad
 <p><img src="https://dl.dropbox.com/u/630732/Blog/WinApp/YamyVimEmulation.gif" ></p>
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rcmdnk/vimedit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
